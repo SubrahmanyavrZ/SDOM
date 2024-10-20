@@ -15,7 +15,35 @@
       <h1> Shadow DOM Header
         <button> Shadow button </button>
       </h1>
-      <style>h1 { color: grey } button { color: grey }</style>`;
+      <a href="https://example.com" target="_blank">Visit Example.com</a>
+      <p>This is some text inside the shadow DOM.</p>
+
+      <!-- Checkboxes -->
+      <h2>Choose your options:</h2>
+      <label><input type="checkbox"> Option 1</label><br>
+      <label><input type="checkbox"> Option 2</label><br>
+      <label><input type="checkbox"> Option 3</label><br>
+
+      <!-- Radio buttons -->
+      <h2>Select one option:</h2>
+      <label><input type="radio" name="radioGroup" value="Option A"> Option A</label><br>
+      <label><input type="radio" name="radioGroup" value="Option B"> Option B</label><br>
+
+      <!-- Dropdown -->
+      <h2>Select an option:</h2>
+      <select>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+
+      <style>
+        h1 { color: grey; }
+        button { color: grey; }
+        a { color: blue; text-decoration: underline; }
+        h2 { margin-top: 20px; }
+        label { display: block; }
+      </style>`;
     document.body.append(customButton);
   </script>
 </body>
