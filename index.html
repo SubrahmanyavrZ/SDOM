@@ -42,6 +42,15 @@
     <option value="Others" title="Select-Other-title">Others</option>
   </select>
 
+  <form>
+          <br></br>
+          <label for="fname">Enter youe First name:</label>
+          <input type="text" id="fname" name="fname" value="Subbu"><br>
+          <input type="reset" value="Reset">
+          </form>
+
+          <br><hr>
+
   <script>
     class CustomSdom1 extends HTMLElement {
       constructor() {
@@ -97,14 +106,25 @@
             <option value="Others" title="Select-Other-title">Others</option>
           </select>
 
+          <form>
+          <br></br>
+          <label for="fname">Enter youe First name:</label>
+          <input type="text" id="fname" name="fname" value="Subbu"><br>
+          <input type="reset" value="Reset">
+          </form>
+
           <style>
             label { display: block; }
           </style>
+
+          <h3 id="idh3" title="titlh3"> h3-Nesting-Element
+          </h3>
+          <br></br>  <br></br> <br></br><br><hr>
         `;
         
         // Append nested custom element with its own shadow root
         const nestedElement = new CustomSdom1();
-        shadowRoot.getElementById('custom-sdom1-container').append(nestedElement);
+        shadowRoot.getElementById('idh3').append(nestedElement);
       }
     }
 
