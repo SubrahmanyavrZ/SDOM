@@ -42,12 +42,12 @@
         super();
         const shadowRoot = this.attachShadow({ mode: "open" });
         shadowRoot.innerHTML = `
-          <h1 id="shadow-header-id" title="SDOM-header-title"> Below Elements inside ShadowDOM H1-Text
-            <button id="SDOM-button-ID" title="SDOM-button-Title"> SDOMButtonText </button>
+          <h1> SDOM Header (SDOM elements)
+          <button id="button-ID" title="button-Title"> SDOMButtonText </button>
           </h1>
-          <a href="https://oracle.com" target="_blank" id="example-link" title="oracle-title">Home</a>
-          <p id="shadow-text-id" title="shadow-text-title">This is some text inside the shadow DOM.</p>
-          
+          <a href="https://oracle.com" target="_blank" id="S-link-id" title="S-oracle-title">oracle</a>
+          <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.</p>
+
           <style>
             h1 { color: darkgrey; }
             button { color: darkgrey ; }
