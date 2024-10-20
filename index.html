@@ -4,30 +4,59 @@
   <title>Document</title>
 </head>
 <body>
-  <h1> DOM Header
+  <h1> DOM Header (Lite elements)
     <button> Normal button </button>
   </h1>
-  
+  <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title">oracle</a>
+  <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.</p>
+
+  <!-- Main HTML Elements -->
+  <h2>Checkboxes</h2>
+  <label title="Dev-checkbox-title">
+        <input type="checkbox" id="Dev-id" title="Dev-title"> Dev
+      </label>
+      <label title="QA-checkbox-title">
+        <input type="checkbox" id="QA-id" title="QA-title"> QA
+      </label>
+      <label title="DevOps-checkbox-title">
+        <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
+      </label>
+
+  <h2>Radio Buttons</h2>
+  <label title="Yes-radio-title">
+        <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
+      </label>
+      <label title="No-radio-title">
+        <input type="radio" name="radioGroup" value="No-value" id="No=id" title="No-title"> No
+      </label>
+
+  <h2>Dropdown</h2>
+  <select id="Languages" title="Language-Dropdown-title">
+        <option value="Java" title="Select-java-title">Java</option>
+        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+        <option value="Others" title="Select-Other-title">Others</option>
+   </select>
+
   <script>
     const customButton = document.createElement("custom-sdom");
     const shadowRoot = customButton.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
-      <h1 id="shadow-header" title="This is the shadow DOM header"> Shadow DOM Header
-        <button id="shadow-button" title="Click this shadow button"> Shadow button </button>
+      <h1 id="shadow-header-id" title="SDOM-header-title"> Below Elements inside ShadowDOM H1-Text
+        <button id="shadow-button-id" title="button-title"> Shadow button </button>
       </h1>
-      <a href="https://example.com" target="_blank" id="example-link" title="Visit Example.com">Visit Example.com</a>
-      <p id="shadow-text" title="Text inside shadow DOM">This is some text inside the shadow DOM.</p>
+      <a href="https://oracle.com" target="_blank" id="example-link" title="oracle-title">oracle</a>
+      <p id="shadoe-text-id" title="shadow-text-title">This is some text inside the shadow DOM.</p>
 
       <!-- Checkboxes Slot -->
-      <h2 id="checkbox-header" title="Choose your options">Choose your options:</h2>
+      <h2 id="checkbox-header" title="Choose your role">Choose your role:</h2>
       <slot name="checkboxes"></slot>
 
       <!-- Radio buttons Slot -->
-      <h2 id="radio-header" title="Select one option">Select one option:</h2>
+      <h2 id="radio-header" title="Select Radio options">Select one option:</h2>
       <slot name="radios"></slot>
 
       <!-- Dropdown Slot -->
-      <h2 id="dropdown-header" title="Select an option">Select an option:</h2>
+      <h2 id="dropdown-header" title="Select dropdown option">Select an option:</h2>
       <slot name="dropdown"></slot>
 
       <style>
@@ -35,38 +64,37 @@
         button { color: grey; }
         a { color: blue; text-decoration: underline; }
         h2 { margin-top: 20px; }
-        label { display: block; }
       </style>`;
     
     document.body.append(customButton);
     
     // Adding content to slots
     const checkboxesHTML = `
-      <label title="Option 1 checkbox">
-        <input type="checkbox" id="option1" title="Select Option 1"> Option 1
+      <label title="Dev-checkbox-title">
+        <input type="checkbox" id="Dev-id" title="Dev-title"> Dev
       </label>
-      <label title="Option 2 checkbox">
-        <input type="checkbox" id="option2" title="Select Option 2"> Option 2
+      <label title="QA-checkbox-title">
+        <input type="checkbox" id="QA-id" title="QA-title"> QA
       </label>
-      <label title="Option 3 checkbox">
-        <input type="checkbox" id="option3" title="Select Option 3"> Option 3
+      <label title="DevOps-checkbox-title">
+        <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
       </label>
     `;
     
     const radiosHTML = `
-      <label title="Option A radio">
-        <input type="radio" name="radioGroup" value="Option A" id="radioA" title="Select Option A"> Option A
+      <label title="Yes-radio-title">
+        <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
       </label>
-      <label title="Option B radio">
-        <input type="radio" name="radioGroup" value="Option B" id="radioB" title="Select Option B"> Option B
+      <label title="No-radio-title">
+        <input type="radio" name="radioGroup" value="No-value" id="No=id" title="No-title"> No
       </label>
     `;
     
     const dropdownHTML = `
-      <select id="option-select" title="Dropdown menu">
-        <option value="1" title="Select Option 1">Option 1</option>
-        <option value="2" title="Select Option 2">Option 2</option>
-        <option value="3" title="Select Option 3">Option 3</option>
+      <select id="Languages" title="Language-Dropdown-title">
+        <option value="Java" title="Select-java-title">Java</option>
+        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+        <option value="Others" title="Select-Other-title">Others</option>
       </select>
     `;
 
