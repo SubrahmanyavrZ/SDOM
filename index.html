@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1> DOM Header (Lite elements)
-    <button title="buttonTitle"> Normal button </button>
+    <button id="buttonID" title="buttonTitle"> Normal button </button>
   </h1>
   <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title">oracle</a>
   <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.</p>
@@ -42,7 +42,7 @@
     const shadowRoot = customButton.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
       <h1 id="shadow-header-id" title="SDOM-header-title"> Below Elements inside ShadowDOM H1-Text
-        <button id="shadow-button-id" title="button-title"> Shadow button </button>
+        <button id="SDOM-button-ID" title="SDOM-button-Title"> Shadow button </button>
       </h1>
       <a href="https://oracle.com" target="_blank" id="example-link" title="oracle-title">oracle</a>
       <p id="shadoe-text-id" title="shadow-text-title">This is some text inside the shadow DOM.</p>
