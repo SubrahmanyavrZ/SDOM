@@ -12,30 +12,23 @@
     const customButton = document.createElement("custom-sdom");
     const shadowRoot = customButton.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
-      <h1> Shadow DOM Header
-        <button> Shadow button </button>
+      <h1 id="shadow-header" title="This is the shadow DOM header"> Shadow DOM Header
+        <button id="shadow-button" title="Click this shadow button"> Shadow button </button>
       </h1>
-      <a href="https://example.com" target="_blank">Visit Example.com</a>
-      <p>This is some text inside the shadow DOM.</p>
+      <a href="https://example.com" target="_blank" id="example-link" title="Visit Example.com">Visit Example.com</a>
+      <p id="shadow-text" title="Text inside shadow DOM">This is some text inside the shadow DOM.</p>
 
-      <!-- Checkboxes -->
-      <h2>Choose your options:</h2>
-      <label><input type="checkbox"> Option 1</label><br>
-      <label><input type="checkbox"> Option 2</label><br>
-      <label><input type="checkbox"> Option 3</label><br>
+      <!-- Checkboxes Slot -->
+      <h2 id="checkbox-header" title="Choose your options">Choose your options:</h2>
+      <slot name="checkboxes"></slot>
 
-      <!-- Radio buttons -->
-      <h2>Select one option:</h2>
-      <label><input type="radio" name="radioGroup" value="Option A"> Option A</label><br>
-      <label><input type="radio" name="radioGroup" value="Option B"> Option B</label><br>
+      <!-- Radio buttons Slot -->
+      <h2 id="radio-header" title="Select one option">Select one option:</h2>
+      <slot name="radios"></slot>
 
-      <!-- Dropdown -->
-      <h2>Select an option:</h2>
-      <select>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
+      <!-- Dropdown Slot -->
+      <h2 id="dropdown-header" title="Select an option">Select an option:</h2>
+      <slot name="dropdown"></slot>
 
       <style>
         h1 { color: grey; }
@@ -44,7 +37,47 @@
         h2 { margin-top: 20px; }
         label { display: block; }
       </style>`;
+    
     document.body.append(customButton);
+    
+    // Adding content to slots
+    const checkboxesHTML = `
+      <label title="Option 1 checkbox">
+        <input type="checkbox" id="option1" title="Select Option 1"> Option 1
+      </label>
+      <label title="Option 2 checkbox">
+        <input type="checkbox" id="option2" title="Select Option 2"> Option 2
+      </label>
+      <label title="Option 3 checkbox">
+        <input type="checkbox" id="option3" title="Select Option 3"> Option 3
+      </label>
+    `;
+    
+    const radiosHTML = `
+      <label title="Option A radio">
+        <input type="radio" name="radioGroup" value="Option A" id="radioA" title="Select Option A"> Option A
+      </label>
+      <label title="Option B radio">
+        <input type="radio" name="radioGroup" value="Option B" id="radioB" title="Select Option B"> Option B
+      </label>
+    `;
+    
+    const dropdownHTML = `
+      <select id="option-select" title="Dropdown menu">
+        <option value="1" title="Select Option 1">Option 1</option>
+        <option value="2" title="Select Option 2">Option 2</option>
+        <option value="3" title="Select Option 3">Option 3</option>
+      </select>
+    `;
+
+    // Inserting content into the respective slots
+    const checkboxesSlot = shadowRoot.querySelector('slot[name="checkboxes"]');
+    const radiosSlot = shadowRoot.querySelector('slot[name="radios"]');
+    const dropdownSlot = shadowRoot.querySelector('slot[name="dropdown"]');
+
+    checkboxesSlot.innerHTML = checkboxesHTML;
+    radiosSlot.innerHTML = radiosHTML;
+    dropdownSlot.innerHTML = dropdownHTML;
   </script>
 </body>
 </html>
