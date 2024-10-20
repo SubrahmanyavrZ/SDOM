@@ -4,13 +4,13 @@
   <title>Document</title>
 </head>
 <body>
-  <h1> DOM Header (Lite elements)
+  <h1 id="idhd1" title="titlh2"> DOM Header (Lite elements)
     <button id="buttonID" title="buttonTitle"> DOMButtonText </button>
   </h1>
   <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title">oracle</a>
   <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.</p>
 
-  <h2>Checkboxes</h2>
+  <h2 id="idbox" title="titlebox" >Checkboxes</h2>
   <label title="Dev-checkbox-title">
     <input type="checkbox" id="Dev-id" title="Dev-title"> Dev
   </label>
@@ -21,7 +21,7 @@
     <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
   </label>
 
-  <h2>Radio Buttons</h2>
+  <h2 id="idrole" title="titlerole">Radio Buttons</h2>
   <label title="Yes-radio-title">
     <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
   </label>
@@ -29,7 +29,7 @@
     <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title"> No
   </label>
 
-  <h2>Dropdown</h2>
+  <h2 id="iddrop" title="titledropdown">Dropdown</h2>
   <select id="Languages" title="Language-Dropdown-title">
     <option value="Java" title="Select-java-title">Java</option>
     <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
@@ -42,7 +42,7 @@
         super();
         const shadowRoot = this.attachShadow({ mode: "open" });
         shadowRoot.innerHTML = `
-          <h1> SDOM Header (SDOM elements)
+          <h1 id="idh1" title="titlh1" > SDOM Header (SDOM elements)
           <button id="button-ID" title="button-Title"> SDOMButtonText </button>
           </h1>
           <a href="https://oracle.com" target="_blank" id="S-link-id" title="S-oracle-title"> Home </a>
@@ -52,7 +52,7 @@
             label { display: block; }
           </style>
           
-          <h2 id="idrole" title="titlerole >Choose your role:</h2>
+          <h2 id="idrole" title="titlerole">Choose your role:</h2>
           <label title="Dev-checkbox-title">
             <input type="checkbox" id="Dev-id-sdom" title="Dev-title"> Dev1
           </label>
@@ -63,7 +63,7 @@
             <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps1
           </label>
 
-          <h2 id="idradio" title="titleradio>Select one option:</h2>
+          <h2 id="idradio" title="titleradio">Select one option:</h2>
           <label title="Yes-radio-title">
             <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title"> Yes1
           </label>
@@ -71,7 +71,7 @@
             <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
           </label>
 
-          <h2 id="iddropdown" title="titledropdown>Select an option:</h2>
+          <h2 id="iddropdown" title="titledropdown" >Select an option:</h2>
           <select id="Languages-sdom" title="Language-Dropdown-title">
             <option value="Java" title="Select-java-title">Java</option>
             <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
