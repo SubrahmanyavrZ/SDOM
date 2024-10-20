@@ -57,7 +57,7 @@
         super();
         const shadowRoot = this.attachShadow({ mode: "open" });
         shadowRoot.innerHTML = `
-          <a href="/now/nav/ui/classic/params/target/%24pa_dashboards_overview.do" class="now-text-link -primary show-underline" aria-label="Visualize it on Dashboards" data-iridize-nofb="" iridize-shadow-dom-element="" style="border: 0px none rgb(41, 61, 158); border-radius: 0px;">Visualize it</a>
+          <a href="https://oracle.com" id="link-id" title="oracle-title"> oracle </a>
         `;
       }
     }
@@ -108,9 +108,9 @@
 
           <form>
           <br></br>
-          <label for="fname">Enter youe First name:</label>
-          <input type="text" id="fname" name="fname" value="Subbu"><br>
-          <input type="reset" value="Reset">
+          <label for="fname">Enter your First name:</label>
+          <input type="text" id="fname" name="fname" value="Subbu" title="name-title"><br>
+          <input type="reset" value="Reset" id="idreset" name="resetname" title="reset-title">
           </form>
 
           <style>
