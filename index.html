@@ -1,136 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Document</title>
+    <title>Document</title>
 </head>
+
 <body>
-  <h1 id="idhd1" title="titlh2"> DOM Header (Lite elements)
+    <h1 id="idhd1" title="titlh2"> DOM Header (Lite elements)
     <button id="buttonID" title="buttonTitle"> DOMButtonText </button>
   </h1>
-  <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title">oracle</a>
-  <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.
-    <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
-  </p>
+    <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title"> Oracle </a>
+    <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.
+        <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
+    </p>
 
-  <ul>
-  <li>Coffee</li> <li>Tea</li>
-  </ul>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
 
-  <h2 id="idbox" title="titlebox">Checkboxes</h2>
-  <label title="Dev-checkbox-title">
-    <input type="checkbox" id="Dev-id" title="Dev-title" checked> Dev
-  </label>
-  <label title="QA-checkbox-title">
-    <input type="checkbox" id="QA-id" title="QA-title"> QA
-  </label>
-  <label title="DevOps-checkbox-title">
-    <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
-  </label>
+    <h2 id="idbox" title="titlebox">Checkboxes</h2>
+    <label title="Dev-checkbox-title">
+        <input type="checkbox" id="Dev-id" title="Dev-title" checked> Dev
+    </label>
+    <label title="QA-checkbox-title">
+        <input type="checkbox" id="QA-id" title="QA-title"> QA
+    </label>
+    <label title="DevOps-checkbox-title">
+        <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
+    </label>
 
-  <h2 id="idrole" title="titlerole">Radio Buttons</h2>
-  <label title="Yes-radio-title">
-    <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
-  </label>
-  <label title="No-radio-title">
-    <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title" checked> No
-  </label>
+    <h2 id="idrole" title="titlerole">Radio Buttons</h2>
+    <label title="Yes-radio-title">
+        <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
+    </label>
+    <label title="No-radio-title">
+        <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title" checked> No
+    </label>
 
-  <h2 id="iddrop" title="titledropdown">Dropdown</h2>
-  <select id="Languages" title="Language-Dropdown-title">
-    <option value="Java" title="Select-java-title">Java</option>
-    <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
-    <option value="Others" title="Select-Other-title">Others</option>
-  </select>
+    <h2 id="iddrop" title="titledropdown">Dropdown</h2>
+    <select id="Languages" title="Language-Dropdown-title">
+        <option value="Java" title="Select-java-title">Java</option>
+        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+        <option value="Others" title="Select-Other-title">Others</option>
+    </select>
 
-  <form>
-          <br></br>
-          <label for="fname">Enter youe First name:</label>
-          <input type="text" id="fname" name="fname" value="Subbu"><br>
-          <input type="reset" value="Reset">
-          </form>
+    <form>
+        <br></br>
+        <label for="fname">Enter youe First name:</label>
+        <input type="text" id="fname" name="fname" value="Subbu">
+        <br>
+        <input type="reset" value="Reset">
+    </form>
 
-          <br><hr>
+    <br>
+    <hr>
 
-  <script>
-    class CustomSdom1 extends HTMLElement {
-      constructor() {
-        super();
-        const shadowRoot = this.attachShadow({ mode: "open" });
-        shadowRoot.innerHTML = `
-          <a href="https://oracle.com" id="link-id" title="oracle-title"> oracle </a>
-        `;
-      }
-    }
-
-    class CustomSdom extends HTMLElement {
-      constructor() {
-        super();
-        const shadowRoot = this.attachShadow({ mode: "open" });
-        shadowRoot.innerHTML = `
-          <h1 id="idh1" title="titlh1"> SDOM Header (SDOM elements)
-          <button id="button-ID" title="button-Title"> SDOMButtonText </button>
-          </h1>
-          <div id="custom-sdom1-container"></div>
-          <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.
-          <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
-          </p>
-
-          <ul>
-            <li>Coffee</li>
-            <li>Tea</li>
-          </ul>
-          
-          <h2 id="idrole" title="titlerole">Choose your role:</h2>
-          <label title="Dev-checkbox-title">
-            <input type="checkbox" id="Dev-id-sdom" title="Dev-title" checked> Dev1
-          </label>
-          <label title="QA-checkbox-title">
-            <input type="checkbox" id="QA-id-sdom" title="QA-title"> QA1
-          </label>
-          <label title="DevOps-checkbox-title">
-            <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps1
-          </label>
-
-          <h2 id="idradio" title="titleradio">Select one option:</h2>
-          <label title="Yes-radio-title">
-            <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title" checked> Yes1
-          </label>
-          <label title="No-radio-title">
-            <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
-          </label>
-
-          <h2 id="iddropdown" title="titledropdown">Select an option:</h2>
-          <select id="Languages-sdom" title="Language-Dropdown-title">
-            <option value="Java" title="Select-java-title">Java</option>
-            <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
-            <option value="Others" title="Select-Other-title">Others</option>
-          </select>
-
-          <form>
-          <br></br>
-          <label for="fname">Enter your First name:</label>
-          <input type="text" id="fname" name="fname" value="Subbu" title="name-title"><br>
-          <input type="reset" value="Reset" id="idreset" name="resetname" title="reset-title">
-          </form>
-
-          <style>
-            label { display: block; }
-          </style>
-
-          <h3 id="idh3" title="titlh3"> h3-Nesting-Element
-          </h3>
-          <br></br>  <br></br> <br></br><br><hr>
-        `;
-        
-        // Append nested custom element with its own shadow root
-        const nestedElement = new CustomSdom1();
-        shadowRoot.getElementById('idh3').append(nestedElement);
-      }
-    }
-
-    customElements.define('custom-sdom', CustomSdom);
-    customElements.define('custom-sdom1', CustomSdom1);
-    document.body.append(new CustomSdom());
-  </script>
+    <script>
+        class CustomSdom1 extends HTMLElement {
+          constructor() {
+            super()
+            const shadowRoot = this.attachShadow({ mode: "open" })
+            shadowRoot.innerHTML = `
+              <a href="https://oracle.com" id="link-id" title="oracle-title"> Oracle </a>
+            `
+          }
+        }
+    
+        class CustomSdom extends HTMLElement {
+          constructor() {
+            super()
+            const shadowRoot = this.attachShadow({ mode: "open" })
+            shadowRoot.innerHTML = `
+              <h1 id="idh1" title="titlh1"> SDOM Header (SDOM elements)
+              <button id="button-ID" title="button-Title"> SDOMButtonText </button>
+              </h1>
+              <div id="custom-sdom1-container"></div>
+              <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.
+              <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
+              </p>
+    
+              <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+              </ul>
+              
+      <form id="idrole" title="titlerole">Choose your role:
+      <label title="Dev-checkbox-title">
+        <input type="checkbox" id="Dev-id-sdom" title="Dev-title" checked> Dev1
+      </label>
+      <label title="QA-checkbox-title">
+        <input type="checkbox" id="QA-id-sdom" title="QA-title"> QA1
+      </label>
+      <label title="DevOps-checkbox-title">
+        <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps1
+      </label>
+      </form>
+      <br>
+    
+      <form id="idradio" title="titleradio">Select one option:
+      <label title="Yes-radio-title">
+        <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title" checked> Yes1
+      </label>
+      <label title="No-radio-title">
+        <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
+      </label>
+      </form>
+      <br>
+    
+      <form id="iddropdown" title="titledropdown">Select an option:
+      <select id="Languages-sdom" title="Language-Dropdown-title">
+        <option value="Java" title="Select-java-title">Java</option>
+        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+        <option value="Others" title="Select-Other-title">Others</option>
+      </select>
+      </form>
+      <br>
+    
+      <form>
+      <label for="fname" id="idlabel" title="titlelabel">Enter your First name:</label>
+      <input type="text" id="fname" name="fname" value="Subbu" title="name-title"><br>
+      <input type="reset" value="Reset" id="idreset" name="resetname" title="reset-title">
+      </form>
+    
+    
+      <h3 id="idh3" title="titlh3"> h3-Nesting-Element
+      </h3>
+              <br></br>  <br></br> <br></br><br><hr>
+            `
+            
+            // Append nested custom element with its own shadow root
+            const nestedElement = new CustomSdom1()
+            shadowRoot.getElementById('idh3').append(nestedElement)
+          }
+        }
+    
+        customElements.define('custom-sdom', CustomSdom)
+        customElements.define('custom-sdom1', CustomSdom1)
+        document.body.append(new CustomSdom())
+    </script>
 </body>
+
 </html>
