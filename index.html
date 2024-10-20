@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1> DOM Header (Lite elements)
-    <button id="buttonID" title="buttonTitle"> Normal button </button>
+    <button id="buttonID" title="buttonTitle"> DOMButtonText </button>
   </h1>
   <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title">oracle</a>
   <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.</p>
@@ -42,10 +42,17 @@
     const shadowRoot = customButton.attachShadow({ mode: "open" });
     shadowRoot.innerHTML = `
       <h1 id="shadow-header-id" title="SDOM-header-title"> Below Elements inside ShadowDOM H1-Text
-        <button id="SDOM-button-ID" title="SDOM-button-Title"> Shadow button </button>
+        <button id="SDOM-button-ID" title="SDOM-button-Title"> SDOMButtonText </button>
       </h1>
       <a href="https://oracle.com" target="_blank" id="example-link" title="oracle-title">oracle</a>
       <p id="shadow-text-id" title="shadow-text-title">This is some text inside the shadow DOM.</p>
+      
+      <style>
+        h1 { color: black; }
+        button { color: darkgrey ; }
+        a { color: blue; text-decoration: underline; }
+        h2 { color: darkgrey; margin-top: 20px; }
+      </style>
 
       <h2 id="checkbox-header" title="Choose your role">Choose your role:</h2>
       <label title="Dev-checkbox-title">
@@ -73,14 +80,19 @@
         <option value="Others" title="Select-Other-title">Others</option>
       </select>
 
-      <style>
-        h1 { color: grey; }
-        button { color: grey; }
-        a { color: blue; text-decoration: underline; }
-        h2 { margin-top: 20px; }
-      </style>
-    `;
-    
+      <h2 id="checkbox-Slot-header" title="Choose">Slot-Checkboxes</h2>
+      <slot name="checkboxes"> 
+        <label title="Dev-checkbox-title">
+          <input type="checkbox" id="Dev-id-sdom" title="Dev-title"> Dev
+        </label>
+        <label title="QA-checkbox-title">
+          <input type="checkbox" id="QA-id-sdom" title="QA-title"> QA
+        </label>
+        <label title="DevOps-checkbox-title">
+          <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps
+        </label>
+      </slot>
+    `
     document.body.append(customButton);
   </script>
 </body>
