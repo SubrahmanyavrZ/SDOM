@@ -45,18 +45,14 @@
           <h1> SDOM Header (SDOM elements)
           <button id="button-ID" title="button-Title"> SDOMButtonText </button>
           </h1>
-          <a href="https://oracle.com" target="_blank" id="S-link-id" title="S-oracle-title">oracle</a>
-          <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.</p>
+          <a href="https://oracle.com" target="_blank" id="S-link-id" title="S-oracle-title"> Home </a>
+          <p>This is some text inside SDOM.</p>
 
           <style>
-            h1 { color: darkgrey; }
-            button { color: darkgrey ; }
-            a { color: blue; text-decoration: underline; }
-            h2 { color: darkgrey; margin-top: 20px; }
             label { display: block; }
           </style>
-
-          <h2 id="checkbox-header" title="Choose your role">Choose your role:</h2>
+          
+          <h2>Choose your role:</h2>
           <label title="Dev-checkbox-title">
             <input type="checkbox" id="Dev-id-sdom" title="Dev-title"> Dev1
           </label>
@@ -67,7 +63,7 @@
             <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps1
           </label>
 
-          <h2 id="radio-header" title="Select Radio options">Select one option:</h2>
+          <h2>Select one option:</h2>
           <label title="Yes-radio-title">
             <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title"> Yes1
           </label>
@@ -75,13 +71,13 @@
             <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
           </label>
 
-          <h2 id="dropdown-header" title="Select dropdown option">Select an option:</h2>
+          <h2>Select an option:</h2>
           <select id="Languages-sdom" title="Language-Dropdown-title">
             <option value="Java" title="Select-java-title">Java</option>
             <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
             <option value="Others" title="Select-Other-title">Others</option>
           </select>
-        `;
+        `
       }
     }
     customElements.define('custom-sdom', CustomSdom);
