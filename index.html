@@ -62,12 +62,12 @@
             super()
             const shadowRoot = this.attachShadow({ mode: "open" })
             shadowRoot.innerHTML = `
-              <a href="https://oracle.com" id="link-id" title="oracle-title"> Oracle </a>
+              <a href="https://oracle.com" id="link-id" title="oracle-title"> Nested-Root-element-Oracle </a>
             `
           }
         }
     
-        class CustomSdom extends HTMLElement {
+      class CustomSdom extends HTMLElement {
           constructor() {
             super()
             const shadowRoot = this.attachShadow({ mode: "open" })
@@ -83,8 +83,8 @@
               <ul>
                 <li>Coffee</li>
                 <li>Tea</li>
-              </ul>
-              
+              </ul>        
+
       <form id="idrole" title="titlerole">Choose your role:
       <label title="Dev-checkbox-title">
         <input type="checkbox" id="Dev-id-sdom" title="Dev-title" checked> Dev1
@@ -108,8 +108,8 @@
       </form>
       <br>
     
-      <form id="iddropdown" title="titledropdown">Select an option:
-      <select id="Languages-sdom" title="Language-Dropdown-title">
+      <form id="iddropdown" title="titledropdown">
+      <select id="Languages-sdom" title="Language-Dropdown-title"> Select an option:
         <option value="Java" title="Select-java-title">Java</option>
         <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
         <option value="Others" title="Select-Other-title">Others</option>
@@ -125,6 +125,8 @@
     
     
       <h3 id="idh3" title="titlh3"> h3-Nesting-Element
+      <br>
+      <br>
       </h3>
               <br></br>  <br></br> <br></br><br><hr>
             `
