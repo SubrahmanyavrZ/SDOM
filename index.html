@@ -1,11 +1,22 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head> <title>Document</title>
-  </head>
-
-  <body>
-    <h1> DOM Header
-      <button> Normal button </button>
-    </h1>
-    
-  </body>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <h1> DOM Header
+    <button> Normal button </button>
+  </h1>
+  
+  <script>
+    const customButton = document.createElement("custom-sdom");
+    const shadowRoot = customButton.attachShadow({ mode: "open" });
+    shadowRoot.innerHTML = `
+      <h1> Shadow DOM Header
+        <button> Shadow button </button>
+      </h1>
+      <style>h1 { color: grey } button { color: grey }</style>`;
+    document.body.append(customButton);
+  </script>
+</body>
 </html>
