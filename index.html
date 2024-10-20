@@ -12,6 +12,10 @@
     <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
   </p>
 
+  <ul>
+  <li>Coffee</li> <li>Tea</li>
+  </ul>
+
   <h2 id="idbox" title="titlebox" >Checkboxes</h2>
   <label title="Dev-checkbox-title">
     <input type="checkbox" id="Dev-id" title="Dev-title" checked> Dev
@@ -25,11 +29,20 @@
 
   <h2 id="idrole" title="titlerole">Radio Buttons</h2>
   <label title="Yes-radio-title">
-    <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title" checked> Yes
+    <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
+  </label>
+  <label title="No-radio-title">
+    <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title"checked> No
+  </label>
+
+  <h2 id="idrole" title="titlerole">Radio Buttons</h2>
+  <label title="Yes-radio-title">
+    <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
   </label>
   <label title="No-radio-title">
     <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title"> No
   </label>
+
 
   <h2 id="iddrop" title="titledropdown">Dropdown</h2>
   <select id="Languages" title="Language-Dropdown-title">
@@ -37,6 +50,7 @@
     <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
     <option value="Others" title="Select-Other-title">Others</option>
   </select>
+  
 
   <script>
     class CustomSdom extends HTMLElement {
@@ -51,9 +65,9 @@
           <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
           </p>
 
-          <style>
-            label { display: block; }
-          </style>
+           <ul>
+           <li>Coffee</li> <li>Tea</li>
+           </ul>
           
           <h2 id="idrole" title="titlerole">Choose your role:</h2>
           <label title="Dev-checkbox-title">
@@ -74,12 +88,24 @@
             <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
           </label>
 
+          <h2 id="idradio" title="titleradio">Select one option:</h2>
+          <label title="Yes-radio-title">
+            <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title" checked> Yes1
+          </label>
+          <label title="No-radio-title">
+            <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
+          </label>
+
           <h2 id="iddropdown" title="titledropdown" >Select an option:</h2>
           <select id="Languages-sdom" title="Language-Dropdown-title">
             <option value="Java" title="Select-java-title">Java</option>
             <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
             <option value="Others" title="Select-Other-title">Others</option>
           </select>
+
+          <style>
+            label { display: block; }
+          </style>
         `
       }
     }
