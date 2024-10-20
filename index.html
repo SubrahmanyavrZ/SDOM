@@ -13,29 +13,29 @@
   <!-- Main HTML Elements -->
   <h2>Checkboxes</h2>
   <label title="Dev-checkbox-title">
-        <input type="checkbox" id="Dev-id" title="Dev-title"> Dev
-      </label>
-      <label title="QA-checkbox-title">
-        <input type="checkbox" id="QA-id" title="QA-title"> QA
-      </label>
-      <label title="DevOps-checkbox-title">
-        <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
-      </label>
+    <input type="checkbox" id="Dev-id" title="Dev-title"> Dev
+  </label>
+  <label title="QA-checkbox-title">
+    <input type="checkbox" id="QA-id" title="QA-title"> QA
+  </label>
+  <label title="DevOps-checkbox-title">
+    <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
+  </label>
 
   <h2>Radio Buttons</h2>
   <label title="Yes-radio-title">
-        <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
-      </label>
-      <label title="No-radio-title">
-        <input type="radio" name="radioGroup" value="No-value" id="No=id" title="No-title"> No
-      </label>
+    <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
+  </label>
+  <label title="No-radio-title">
+    <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title"> No
+  </label>
 
   <h2>Dropdown</h2>
   <select id="Languages" title="Language-Dropdown-title">
-        <option value="Java" title="Select-java-title">Java</option>
-        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
-        <option value="Others" title="Select-Other-title">Others</option>
-   </select>
+    <option value="Java" title="Select-java-title">Java</option>
+    <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+    <option value="Others" title="Select-Other-title">Others</option>
+  </select>
 
   <script>
     const customButton = document.createElement("custom-sdom");
@@ -45,67 +45,43 @@
         <button id="SDOM-button-ID" title="SDOM-button-Title"> Shadow button </button>
       </h1>
       <a href="https://oracle.com" target="_blank" id="example-link" title="oracle-title">oracle</a>
-      <p id="shadoe-text-id" title="shadow-text-title">This is some text inside the shadow DOM.</p>
+      <p id="shadow-text-id" title="shadow-text-title">This is some text inside the shadow DOM.</p>
 
-      <!-- Checkboxes Slot -->
       <h2 id="checkbox-header" title="Choose your role">Choose your role:</h2>
-      <slot name="checkboxes"></slot>
+      <label title="Dev-checkbox-title">
+        <input type="checkbox" id="Dev-id-sdom" title="Dev-title"> Dev
+      </label>
+      <label title="QA-checkbox-title">
+        <input type="checkbox" id="QA-id-sdom" title="QA-title"> QA
+      </label>
+      <label title="DevOps-checkbox-title">
+        <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps
+      </label>
 
-      <!-- Radio buttons Slot -->
       <h2 id="radio-header" title="Select Radio options">Select one option:</h2>
-      <slot name="radios"></slot>
+      <label title="Yes-radio-title">
+        <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title"> Yes
+      </label>
+      <label title="No-radio-title">
+        <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No
+      </label>
 
-      <!-- Dropdown Slot -->
       <h2 id="dropdown-header" title="Select dropdown option">Select an option:</h2>
-      <slot name="dropdown"></slot>
+      <select id="Languages-sdom" title="Language-Dropdown-title">
+        <option value="Java" title="Select-java-title">Java</option>
+        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+        <option value="Others" title="Select-Other-title">Others</option>
+      </select>
 
       <style>
         h1 { color: grey; }
         button { color: grey; }
         a { color: blue; text-decoration: underline; }
         h2 { margin-top: 20px; }
-      </style>`;
+      </style>
+    `;
     
     document.body.append(customButton);
-    
-    // Adding content to slots
-    const checkboxesHTML = `
-      <label title="Dev-checkbox-title">
-        <input type="checkbox" id="Dev-id" title="Dev-title"> Dev
-      </label>
-      <label title="QA-checkbox-title">
-        <input type="checkbox" id="QA-id" title="QA-title"> QA
-      </label>
-      <label title="DevOps-checkbox-title">
-        <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
-      </label>
-    `;
-    
-    const radiosHTML = `
-      <label title="Yes-radio-title">
-        <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
-      </label>
-      <label title="No-radio-title">
-        <input type="radio" name="radioGroup" value="No-value" id="No=id" title="No-title"> No
-      </label>
-    `;
-    
-    const dropdownHTML = `
-      <select id="Languages" title="Language-Dropdown-title">
-        <option value="Java" title="Select-java-title">Java</option>
-        <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
-        <option value="Others" title="Select-Other-title">Others</option>
-      </select>
-    `;
-
-    // Inserting content into the respective slots
-    const checkboxesSlot = shadowRoot.querySelector('slot[name="checkboxes"]');
-    const radiosSlot = shadowRoot.querySelector('slot[name="radios"]');
-    const dropdownSlot = shadowRoot.querySelector('slot[name="dropdown"]');
-
-    checkboxesSlot.innerHTML = checkboxesHTML;
-    radiosSlot.innerHTML = radiosHTML;
-    dropdownSlot.innerHTML = dropdownHTML;
   </script>
 </body>
 </html>
