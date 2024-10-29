@@ -13,8 +13,14 @@
     <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.
         <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
     </p>
+     <p id="DOM-text-id" title="DOM-Text-title">This is some text inside main DOM.
+        <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
+    </p>
+
 
     <ul>
+        <li>Coffee</li>
+        <li>Coffee</li>
         <li>Coffee</li>
         <li>Tea</li>
     </ul>
@@ -89,7 +95,12 @@
 
               <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.
                  <div id="DivDOM-text-id" title="DivDOM-Text-title"> SDOM div </div>
+              </p>   
+
+              <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.
+                 <div id="DivDOM-text-id" title="DivDOM-Text-title"> SDOM div </div>
               </p>      
+   
 
       <form>
       <label title="Dev-checkbox-title">
@@ -128,7 +139,7 @@
        <input type="text" id="fname" name="fname" value="Subbu" title="name-title"> <br>
        <input type="reset" value="Reset" id="idreset" name="resetname" title="reset-title">
       </form>
-      
+
       <br></br>
 
       <svg width="50" height="50">
@@ -137,13 +148,16 @@
 
       <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="32" height="32">
     
+      
+      <br></br>
+
+      
     
       <h3 id="idh3" title="titlh3"> h3-Nesting-Element
       <br>
       </h3>
               <br></br>  <br></br> <br></br><br><hr>
             `
-            
             // Append nested custom element with its own shadow root
             const nestedElement = new CustomSdom1()
             shadowRoot.getElementById('idh3').append(nestedElement)
