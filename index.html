@@ -120,13 +120,16 @@
           <h1 id="idh1" title="titlh1">SDOM Header (SDOM elements)
             <button id="button-ID" title="button-Title">SDOM Button Text</button>
           </h1>
+
           <ul>
             <li>Coffee</li>
             <li>Tea</li>
           </ul>
+
           <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.
             <div id="DivDOM-text-id" title="DivDOM-Text-title">SDOM div</div>
           </p>
+
           <form>
             <label title="Dev-checkbox-title">
               <input type="checkbox" id="Dev-id-sdom" title="Dev-title" checked> Dev1
@@ -138,6 +141,7 @@
               <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps1
             </label>
           </form>
+
           <form>
             <label title="Yes-radio-title">
               <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title" checked> Yes1
@@ -146,6 +150,7 @@
               <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
             </label>
           </form>
+
           <form>
             <label for="Languages-sdom" title="Language-Dropdown-title">Options-text:</label>
             <select id="Languages-sdom">
@@ -154,13 +159,26 @@
               <option value="Others" title="Select-Other-title">Others</option>
             </select>
           </form>
+
           <form>
             <label for="fname" id="idlabel" title="titlelabel">Enter your First name:</label>
             <input type="text" id="fname-sdom" name="fname" value="Subbu" title="name-title"> 
             <input type="reset" value="Reset" id="idreset" name="resetname" title="reset-title">
           </form>
+
+          <div class="svg-container">
+            <svg width="50" height="50">
+              <circle cx="20" cy="20" r="20" stroke="green" stroke-width="2" fill="black" />
+            </svg>
+          </div>
+
+          <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="32" height="32">
+
+
           <h4>Duplicate locators</h4>
           <h4>Duplicate locators</h4>
+
+
           <h3 id="idh3" title="titlh3">h3-Nesting-Element</h3>
         `;
         const nestedElement = new CustomSdom1();
