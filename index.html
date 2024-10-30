@@ -12,31 +12,42 @@
       line-height: 1.6;
       background-color: #f4f4f4;
     }
+
     h1, h2, h3, h4 {
       color: #333;
     }
+
     button, input[type="reset"], select {
       margin-top: 10px;
       padding: 8px;
       font-size: 14px;
     }
+
     ul {
       list-style-type: disc;
       margin: 10px 0;
       padding-left: 20px;
     }
+
     form {
       margin-top: 20px;
       padding: 10px;
       background: #fff;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .svg-container {
-      margin: 20px 0;
-    }
+
     hr {
       margin: 40px 0;
+    }
+
+    .svg-container {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    img {
+      vertical-align: center;
     }
   </style>
 </head>
@@ -47,48 +58,61 @@
   </h1>
   <a href="https://oracle.com" target="_blank" id="link-id" title="oracle-title">Oracle</a>
 
-  <p id="DOM-text-id" title="DOM-Text-title">This is some text inside the main DOM.
-    <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
-  </p>
+  <p id="DOM-text-id" title="DOM-Text-title">This is some text inside the main DOM.</p>
+  <div id="DivDOM-text-id" title="DivDOM-Text-title">DOM div</div>
 
   <ul>
     <li>Coffee</li>
     <li>Tea</li>
   </ul>
 
-  <h2 id="idbox" title="titlebox">Checkboxes</h2>
-  <label title="Dev-checkbox-title">
-    <input type="checkbox" id="Dev-id" title="Dev-title" checked> Dev
-  </label>
-  <label title="QA-checkbox-title">
-    <input type="checkbox" id="QA-id" title="QA-title"> QA
-  </label>
-  <label title="DevOps-checkbox-title">
-    <input type="checkbox" id="DevOps-id" title="DevOps-title"> DevOps
-  </label>
-
-  <h2 id="idrole" title="titlerole">Radio Buttons</h2>
-  <label title="Yes-radio-title">
-    <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title"> Yes
-  </label>
-  <label title="No-radio-title">
-    <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title" checked> No
-  </label>
-
-  <h2 id="iddrop" title="titledropdown">Dropdown</h2>
-  <select id="Languages" title="Language-Dropdown-title">
-    <option value="Java" title="Select-java-title">Java</option>
-    <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
-    <option value="Others" title="Select-Other-title">Others</option>
-  </select>
-
-  <form>
-    <label for="fname">Enter your First name:</label>
-    <input type="text" id="fname" name="fname" value="Subbu">
-    <input type="reset" value="Reset">
+  <form id="idbox" title="titlebox">
+    <fieldset>
+      <legend>Roles</legend>
+      <label for="Dev-id">
+        <input type="checkbox" id="Dev-id" checked>Dev
+      </label>
+      <label for="QA-id">
+        <input type="checkbox" id="QA-id">QA
+      </label>
+      <label for="DevOps-id">
+        <input type="checkbox" id="DevOps-id">DevOps
+      </label>
+    </fieldset>
   </form>
 
-  <div class="svg-container">
+  <form id="idrole" title="titlerole">
+    <fieldset>
+      <legend>Select an option</legend>
+      <label for="Yes-id">
+        <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title">Yes
+      </label>
+      <label for="No-id">
+        <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title" checked>No
+      </label>
+    </fieldset>
+  </form>
+
+  <form id="iddrop" title="titledropdown">
+    <label for="Languages">Select a Language</label>
+    <select id="Languages" title="Language-Dropdown-title">
+      <option value="" disabled selected hidden>Choose a Language</option>LanguageText
+      <option value="Java" title="Select-java-title">Java</option>
+      <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
+      <option value="Others" title="Select-Other-title">Others</option>
+    </select>
+  </form>
+
+  <form>
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="fname">Enter your First Name:</label>
+       <input type="text" id="fname" name="fname" value="Subbu" placeholder="e.g., Subbu">
+      <input type="reset" value="Reset Text">
+    </fieldset>
+  </form>
+
+  <div class="svg-container" aria-label="Green-stroked black circle">
     <svg width="50" height="50">
       <circle cx="20" cy="20" r="20" stroke="green" stroke-width="2" fill="black" />
     </svg>
@@ -126,68 +150,105 @@
             <li>Tea</li>
           </ul>
 
-          <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.
-            <div id="DivDOM-text-id" title="DivDOM-Text-title">SDOM div</div>
-          </p>
+          <p id="SDOM-text-id" title="SDOM-Text-title">This is some text inside SDOM.</p>
+          <div id="DivDOM-text-id" title="DivDOM-Text-title">SDOM div</div>
 
-          <form>
-            <label title="Dev-checkbox-title">
-              <input type="checkbox" id="Dev-id-sdom" title="Dev-title" checked> Dev1
-            </label>
-            <label title="QA-checkbox-title">
-              <input type="checkbox" id="QA-id-sdom" title="QA-title"> QA1
-            </label>
-            <label title="DevOps-checkbox-title">
-              <input type="checkbox" id="DevOps-id-sdom" title="DevOps-title"> DevOps1
-            </label>
+          <form id="idbox" title="titlebox">
+            <fieldset>
+              <legend>Roles</legend>
+              <label for="Dev-id">
+                <input type="checkbox" id="Dev-id" checked>Dev
+              </label>
+              <label for="QA-id">
+                <input type="checkbox" id="QA-id">QA
+              </label>
+              <label for="DevOps-id">
+                <input type="checkbox" id="DevOps-id">DevOps
+              </label>
+            </fieldset>
           </form>
 
-          <form>
-            <label title="Yes-radio-title">
-              <input type="radio" name="radioGroup-sdom" value="Yes-value" id="Yes-id-sdom" title="Yes-title" checked> Yes1
-            </label>
-            <label title="No-radio-title">
-              <input type="radio" name="radioGroup-sdom" value="No-value" id="No-id-sdom" title="No-title"> No1
-            </label>
+          <form id="idrole" title="titlerole">
+            <fieldset>
+              <legend>Select an option</legend>
+              <label for="Yes-id">
+                <input type="radio" name="radioGroup" value="Yes-value" id="Yes-id" title="Yes-title">Yes
+              </label>
+              <label for="No-id">
+                <input type="radio" name="radioGroup" value="No-value" id="No-id" title="No-title" checked>No
+              </label>
+            </fieldset>
           </form>
 
-          <p></p>
-
-          <form>
-            <label for="Languages-sdom" title="Language-Dropdown-title">TXT_Language</label>
-            <select id="Languages-sdom">
+          <form id="iddrop" title="titledropdown">
+            <label for="Languages">Select a Language</label>
+            <select id="Languages" title="Language-Dropdown-title">LanguageText
+              <option value="" disabled selected hidden>Choose a Language</option>
               <option value="Java" title="Select-java-title">Java</option>
               <option value="TypeScript" title="Select-TypeScript-title">TypeScript</option>
               <option value="Others" title="Select-Other-title">Others</option>
             </select>
           </form>
 
-          <p></p>
-
           <form>
-            <label for="fname" id="idlabel" title="titlelabel">TXT_Name</label>
-            <input type="text" id="fname-sdom" name="fname" value="Subbu" title="name-title"> 
-            <input type="reset" value="Reset" id="idreset" name="resetname" title="reset-title">
+            <fieldset>
+              <legend>Personal Information</legend>
+              <label for="fname">Enter your First Name:</label>
+              <input type="text" id="fname" name="fname" value="Subbu" placeholder="e.g., Subbu">
+              <input type="reset" value="Reset Text">
+            </fieldset>
           </form>
 
-          <p></p>
-
-          <div class="svg-container">
-            <svg width="50" height="50">
-              <circle cx="20" cy="20" r="20" stroke="green" stroke-width="2" fill="black" />
-            </svg>
-          </div>
-
-          <p></p>
-
-          <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="32" height="32">
-
-
           <h4>Duplicate locators</h4>
           <h4>Duplicate locators</h4>
-
 
           <h3 id="idh3" title="titlh3">h3-Nesting-Element</h3>
+
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              margin: 20px;
+              line-height: 1.6;
+              background-color: #f4f4f4;
+            }
+
+            h1, h2, h3, h4 {
+              color: #333;
+            }
+
+            button, input[type="reset"], select {
+              margin-top: 10px;
+              padding: 8px;
+              font-size: 14px;
+            }
+
+            ul {
+              list-style-type: disc;
+              margin: 10px 0;
+              padding-left: 20px;
+            }
+
+            form {
+              margin-top: 20px;
+              padding: 10px;
+              background: #fff;
+              border-radius: 5px;
+              box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            hr {
+              margin: 40px 0;
+            }
+
+            .svg-container {
+              display: inline-block;
+              margin-right: 10px;
+            }
+
+            img {
+              vertical-align: center;
+            }
+          </style>
         `;
         const nestedElement = new CustomSdom1();
         shadowRoot.getElementById('idh3').append(nestedElement);
@@ -198,6 +259,3 @@
     customElements.define('custom-sdom1', CustomSdom1);
     document.body.append(new CustomSdom());
   </script>
-</body>
-
-</html>
